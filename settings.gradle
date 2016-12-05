@@ -1,0 +1,1 @@
+    include ':app', ':ViewPagerIndicator', ':circleimageview', ':pullrefreshlayout', ':photoviewlibrary', 'pulltorefresh', 'pulltorefresh_listfragment', ':twowayviewcore', ':alipay_lib'

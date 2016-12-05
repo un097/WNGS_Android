@@ -1,0 +1,77 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/layout_bg"
+    tools:context="com.xuhai.wngs.ui.shzl.ShzlBldCPLBActivity">
+
+    <RelativeLayout
+        android:id="@+id/layout_gouwuche"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:background="@color/bg_bld_tab_bar"
+        android:padding="8dp">
+
+        <TextView
+            android:id="@+id/liebiao_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:background="@drawable/image_bld_spxq_number"
+            android:gravity="center"
+            android:text="0"
+            android:textColor="@color/myred" />
+
+        <TextView
+            android:id="@+id/liebiao_yang"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="4dp"
+            android:layout_toRightOf="@id/liebiao_number"
+            android:text="@string/yang"
+            android:textColor="@color/myred"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/liebiao_jiage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="4dp"
+            android:layout_toRightOf="@id/liebiao_yang"
+            android:text="0"
+            android:textColor="@color/myred"
+            android:textSize="18sp" />
+
+        <ImageView
+            android:id="@+id/gouwuche"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/btn_bld_public_gouwuche"
+            android:textColor="@android:color/white" />
+    </RelativeLayout>
+
+    <com.baoyz.widget.PullRefreshLayout
+        android:id="@+id/swipeRefreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/layout_gouwuche">
+
+        <ListView
+            android:id="@+id/listView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:cacheColorHint="@color/transparent"
+            android:divider="@null"
+            android:descendantFocusability="beforeDescendants"
+            android:listSelector="@color/transparent" />
+
+    </com.baoyz.widget.PullRefreshLayout>
+
+</RelativeLayout>

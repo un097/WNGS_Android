@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingLeft="@dimen/padding_list_left_right"
+    android:paddingRight="@dimen/padding_list_left_right"
+    android:paddingTop="@dimen/padding_list_top">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        card_view:cardBackgroundColor="@color/white"
+        card_view:cardCornerRadius="0dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/selector_half_transp"
+            android:padding="8dp">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/image"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:layout_centerVertical="true"
+                app:border_color="@color/light"
+                app:border_width="2dp" />
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_alignTop="@id/image"
+                android:layout_centerVertical="true"
+
+                android:layout_toEndOf="@id/image"
+                android:layout_toRightOf="@id/image">
+
+                <RelativeLayout
+                    android:id="@+id/layout_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:singleLine="true"
+                    android:text="虹馆"
+                    android:textSize="18sp" />
+                    <ImageView
+                        android:id="@+id/iv_olpay"
+                        android:visibility="gone"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_sjfw_olpay"
+                        />
+                </RelativeLayout>
+                <RelativeLayout
+                    android:id="@+id/rl_center"
+                    android:layout_below="@+id/layout_title"
+                    android:layout_marginTop="6dp"
+                    android:layout_marginBottom="6dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                <RatingBar
+                    android:id="@+id/rbar"
+                    style="@style/MyRatingBar"
+
+                    android:layout_centerVertical="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:numStars="5"
+                    android:isIndicator="true"
+                     />
+                    <LinearLayout
+                        android:id="@+id/ll_right"
+
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:id="@+id/iv_ding"
+                            android:visibility="gone"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/icon_main_sjfw_ding"
+                            />
+                        <ImageView
+                            android:id="@+id/iv_tuan"
+                            android:visibility="gone"
+                            android:layout_marginLeft="4dp"
+                            android:layout_marginStart="4dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/icon_main_sjfw_tuan"
+                            />
+                        <ImageView
+                            android:id="@+id/iv_hui"
+                            android:visibility="gone"
+                            android:layout_marginLeft="4dp"
+                            android:layout_marginStart="4dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/icon_main_sjfw_hui"
+                            />
+                        <ImageView
+                            android:id="@+id/iv_wai"
+                            android:visibility="gone"
+                            android:layout_marginLeft="4dp"
+                            android:layout_marginStart="4dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/icon_main_sjfw_wai"
+                            />
+
+                        </LinearLayout>
+
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/tv_tel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/rl_center"
+                    android:singleLine="true"
+                    android:textColor="@color/color_text_gray"
+                    android:text="33333" />
+
+                <TextView
+                    android:id="@+id/info"
+                    android:layout_marginTop="4dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_tel"
+                    android:singleLine="true"
+                    android:textColor="@color/color_text_gray"
+                    android:text="东岭南街" />
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+
+</RelativeLayout>

@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/layout_bg"
+    android:id="@+id/layout_all"
+    android:visibility="gone"
+    >
+
+    <RelativeLayout
+        android:id="@+id/ok_bg"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/base_dimen_48"
+        android:layout_alignParentBottom="true"
+        android:background="@color/bg_bld_tab_bar"
+        android:padding="4dp">
+
+        <TextView
+            android:id="@+id/tv_ok"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:padding="@dimen/base_dimen_8"
+            android:background="@color/red"
+            android:gravity="center"
+            android:text="我要兑换"
+            android:textColor="@android:color/white" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/ok_bg"
+        android:fillViewport="true">
+        <LinearLayout
+            android:id="@+id/duihuan_ll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <!-- ViewPager是一个控件 -->
+                <android.support.v4.view.ViewPager
+                    android:id="@+id/adv_pager"
+                    android:layout_width="fill_parent"
+                    android:layout_height="140dp"
+                    android:background="@color/white">
+
+                </android.support.v4.view.ViewPager>
+
+                <LinearLayout
+                    android:id="@+id/viewGroup"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/adv_pager"
+                    android:gravity="right"
+                    android:layout_marginTop="-15dp"
+                    android:layout_marginRight="20dp"
+                    android:orientation="horizontal">
+                </LinearLayout>
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:id="@+id/rl1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="18dp"
+                    android:paddingTop="18dp">
+
+                    <RelativeLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="12dp"
+                        android:background="@color/white"
+                        >
+
+                        <TextView
+                            android:id="@+id/title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:maxEms="13"
+                            android:singleLine="true"
+                            android:layout_centerVertical="true"
+                            android:text=""
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:id="@+id/points"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toLeftOf="@+id/price"
+                            android:layout_toStartOf="@id/price"
+                            android:layout_centerVertical="true"
+                            android:text="300"
+                            android:textColor="@color/red"
+                            android:textSize="18dp" />
+
+                        <TextView
+                            android:id="@+id/price"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:text="积分"
+                            android:textColor="@color/red" />
+                    </RelativeLayout>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rl2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/rl1"
+                    android:padding="18dp">
+
+                    <TextView
+                        android:id="@+id/tv1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="商品详情"
+                        android:textColor="@color/red"
+                        android:textSize="14sp"
+
+                        />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginStart="8dp"
+                        android:layout_toRightOf="@+id/tv1"
+                        android:layout_toEndOf="@id/tv1"
+                        android:src="@drawable/line_long_horizontal" />
+
+                    <TextView
+
+                        android:id="@+id/content"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/tv1"
+                        android:layout_marginTop="8dp"
+                        android:textSize="15sp" />
+                </RelativeLayout>
+
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+
+
+
+</RelativeLayout>

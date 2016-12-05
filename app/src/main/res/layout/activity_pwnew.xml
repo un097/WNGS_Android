@@ -1,0 +1,39 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/layout_bg"
+    tools:context="com.xuhai.wngs.ui.more.PWNewActivity">
+
+    <EditText
+        android:id="@+id/et_password_one"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/base_dimen_48"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/bg_edit"
+        android:hint="设置您的新密码"
+        android:paddingLeft="16dp" />
+
+    <EditText
+        android:id="@+id/et_password_two"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/base_dimen_48"
+        android:layout_below="@id/et_password_one"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/bg_edit"
+        android:hint="确认您的新密码"
+        android:paddingLeft="12dp" />
+
+
+    <ImageView
+        android:id="@+id/confirmation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/et_password_two"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="26dp"
+        android:background="@drawable/btn_more_confirmation"
+        android:text="确认"
+        android:textColor="@color/white" />
+
+</RelativeLayout>

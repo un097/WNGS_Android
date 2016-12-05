@@ -1,0 +1,40 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/layout_all"
+    android:visibility="gone"
+    android:background="@color/layout_bg"
+    tools:context="com.xuhai.wngs.ui.shzl.ShzlBBSContentActivity">
+
+    <com.baoyz.widget.PullRefreshLayout
+        android:id="@+id/swipeRefreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ListView
+            android:id="@+id/listView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+
+            android:cacheColorHint="@color/transparent"
+            android:divider="@null"
+            android:listSelector="@color/transparent"
+            android:paddingBottom="50dp"/>
+
+    </com.baoyz.widget.PullRefreshLayout>
+
+    <ImageView
+        android:id="@+id/content_huifu"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/base_dimen_48"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/base_dimen_8"
+        android:layout_marginLeft="@dimen/base_dimen_8"
+        android:layout_marginRight="@dimen/base_dimen_8"
+        android:focusable="false"
+        android:background="@drawable/ic_shzl_bbs_content_huifu" />
+</RelativeLayout>

@@ -1,0 +1,68 @@
+<!--<ScrollView-->
+    <!--xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--xmlns:tools="http://schemas.android.com/tools"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!-->-->
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="16dp"
+    android:orientation="vertical"
+    tools:context="com.xuhai.wngs.ui.main.MainCitySelActivity">
+
+
+    <LinearLayout
+        android:gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <View
+            android:layout_width="16dp"
+            android:layout_height="1dp"
+            android:background="@color/color_text_gray"/>
+
+        <TextView
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="热门城市"
+            />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/color_text_gray"/>
+    </LinearLayout>
+
+    <com.xuhai.wngs.views.ScrollGridView
+        android:id="@+id/gv_city"
+        android:numColumns="3"
+        android:verticalSpacing="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <RelativeLayout
+        android:layout_marginTop="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ListView
+            android:id="@+id/lv_city"
+            android:scrollbars="none"
+            android:divider="@null"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <com.xuhai.wngs.views.MyLetterListView
+            android:id="@+id/letterView"
+            android:layout_alignParentRight="true"
+            android:layout_width="38dp"
+            android:layout_height="match_parent" />
+    </RelativeLayout>
+
+</LinearLayout>
+<!--</ScrollView>-->

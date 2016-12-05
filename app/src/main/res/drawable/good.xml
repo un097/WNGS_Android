@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:Android="http://schemas.android.com/apk/res/android">
+
+    <item  Android:state_pressed="true" Android:drawable="@drawable/ic_main_public_good_shi"/>
+    <!-- focused -->
+    <item Android:state_pressed="false" Android:drawable="@drawable/ic_main_public_good" />
+    <!-- default -->
+
+</selector>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style 
+        name="popup_win_ani" 
+        parent="android:Animation" 
+        mce_bogus="1"
+        >
+        <item name="android:windowEnterAnimation">@anim/pop_win_enter</item>
+        <item name="android:windowExitAnimation">@anim/pop_win_exit</item>
+    </style>
+</resources>

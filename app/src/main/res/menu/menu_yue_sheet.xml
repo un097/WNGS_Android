@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/yhk" android:title="银行卡支付" />
+    <item android:id="@+id/alipay" android:title="支付宝" />
+    <item android:id="@+id/wx" android:title="微信支付" />
+    <item android:id="@+id/yl" android:title="银联支付" />
+    <group android:id="@+id/helpgroup">
+        <item android:id="@+id/cancle" android:title="取消"/>
+    </group>
+</menu>

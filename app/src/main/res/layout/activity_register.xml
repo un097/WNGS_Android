@@ -1,0 +1,63 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/layout_bg"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="com.xuhai.wngs.ui.more.RegisterActivity">
+
+    <EditText
+        android:id="@+id/et_username"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/base_dimen_48"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/bg_edit"
+        android:ems="10"
+        android:inputType="number"
+        android:enabled="false"
+        android:focusable="false"
+        android:hint="注册手机号"
+        android:maxLength="11"
+        android:numeric="integer"
+        android:paddingLeft="20dp"
+        android:textColorHint="@color/color_text_gray"
+        android:textColorLink="@color/color_text_gray" />
+
+    <EditText
+        android:id="@+id/et_password_one"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/base_dimen_48"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/bg_edit"
+        android:inputType="textPassword"
+        android:ems="10"
+        android:hint="设置你的密码"
+        android:paddingLeft="20dp"
+        android:password="true"
+        android:textColorHint="@color/color_text_gray" />
+
+    <EditText
+        android:id="@+id/et_password_two"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/base_dimen_48"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/bg_edit"
+        android:inputType="textPassword"
+        android:ems="10"
+        android:hint="确认你的密码"
+        android:paddingLeft="20dp"
+        android:password="true"
+        android:textColorHint="@color/color_text_gray" />
+
+
+    <ImageView
+        android:id="@+id/confirmation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/btn_more_confirmation" />
+
+
+</LinearLayout>

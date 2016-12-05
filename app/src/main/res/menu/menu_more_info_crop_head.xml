@@ -1,0 +1,8 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.xuhai.wngs.ui.more.MoreInfoCropHeadActivity">
+    <item android:id="@+id/action_complete"
+        android:title="完成"
+        android:showAsAction="always"
+        />
+</menu>

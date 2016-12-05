@@ -1,0 +1,26 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/layout_bg"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context="com.xuhai.wngs.ui.shzl.ShzlBBSHFActivity">
+
+    <EditText
+        android:id="@+id/et_huifu"
+        android:layout_width="match_parent"
+        android:layout_height="144dp"
+        android:background="@drawable/bg_edit_public"
+        android:gravity="top"
+        android:hint="请输入回复内容"
+        android:textColorHint="@color/color_text_gray" />
+
+
+    <ImageView
+        android:id="@+id/confirmation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/btn_wyfw_tsbx_post_sure" />
+</LinearLayout>

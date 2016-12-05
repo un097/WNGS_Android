@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="dark">#FF222222</color>
+    <color name="light">#FFEEEEEE</color>
+
+    <color name="red">#ff0000</color>
+    <color name="actionbar_title">#d5293f</color>
+    <color name="myred">#d5293f</color>
+    <color name="white">#ffffff</color>
+    <color name="black">#000000</color>
+
+    <color name="bg_color_wyfw_dzxq_bottom">#f3f1ef</color>
+
+    <color name="ripple">#ff80ab</color>
+    <color name="accent">#ff0000</color>
+    <color name="accent_pressed">#ff4081</color>
+    <color name="blue_toast">#ff3ea2fc</color>
+    <color name="color_text_name">#ffff4444</color>
+    <color name="color_text_gray">#bcbcbc</color>
+    <color name="orange_dark">#eb6100</color>
+    <color name="green_dark">#80bc42</color>
+    <color name="transparent">#00000000</color>
+    <color name="half_transparent">#20000000</color>
+    <color name="halfaaaa_transparent">#7c000000</color>
+
+    <color name="layout_bg">#F7F7F7</color>
+    <color name="color_bg">#EEEEEE</color>
+
+    <color name="bg_bld_tab_bar">#f3f1ef</color>
+
+    <color name="head_background">#E2383C</color>
+    <color name="sel_bucket_gray">#ff7f7f7f</color>
+    <drawable name="btn_on">#d91616</drawable>
+    <drawable name="btn_off">#ff4401</drawable>
+</resources>

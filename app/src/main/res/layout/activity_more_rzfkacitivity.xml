@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/layout_bg"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/nicheng_tiao"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/base_dimen_48"
+        android:layout_marginTop="@dimen/base_dimen_8"
+        android:background="@drawable/bg_edit"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/base_dimen_16"
+        android:paddingRight="@dimen/base_dimen_16">
+
+        <TextView
+            android:id="@+id/tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="姓名"
+            android:textSize="18dp" />
+
+        <EditText
+            android:id="@+id/et_name"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/base_dimen_48"
+            android:background="#00000000"
+            android:gravity="right"
+            android:hint="姓名"
+            android:textColor="@color/color_text_gray"
+            android:textColorHint="@color/color_text_gray" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/dianhua_tiao"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/base_dimen_48"
+        android:layout_marginTop="@dimen/base_dimen_8"
+        android:background="@drawable/bg_edit"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/base_dimen_16"
+        android:paddingRight="@dimen/base_dimen_16">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="电话"
+            android:textSize="18dp" />
+
+        <EditText
+            android:id="@+id/et_tel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/base_dimen_48"
+            android:background="@color/transparent"
+            android:gravity="right"
+            android:hint="电话"
+            android:inputType="number"
+            android:maxLength="11"
+            android:textColor="@color/color_text_gray"
+            android:textColorHint="@color/color_text_gray" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/shuoming_tiao"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/base_dimen_48"
+        android:layout_marginTop="@dimen/base_dimen_8"
+        android:background="@drawable/bg_edit"
+        android:gravity="center"
+        android:paddingLeft="@dimen/base_dimen_16"
+        android:paddingRight="@dimen/base_dimen_16">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="地址"
+            android:textSize="18dp" />
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+
+            android:layout_height="fill_parent"
+            android:gravity="right">
+
+            <EditText
+                android:id="@+id/et_build"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:background="@color/transparent"
+                android:hint="栋"
+                android:maxLength="3"
+                android:singleLine="true"
+                android:textColor="@color/color_text_gray"
+                android:textColorHint="@color/color_text_gray" />
+
+            <TextView
+                android:id="@+id/tv_build"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/et_build"
+                android:gravity="center"
+                android:text="栋" />
+
+            <EditText
+                android:id="@+id/et_unit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="16dp"
+
+                android:layout_toRightOf="@id/tv_build"
+                android:background="@color/transparent"
+                android:hint="单元"
+                android:maxLength="3"
+                android:singleLine="true"
+                android:textColor="@color/color_text_gray"
+                android:textColorHint="@color/color_text_gray" />
+
+            <TextView
+                android:id="@+id/tv_unit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/et_unit"
+                android:gravity="center"
+                android:text="单元" />
+
+            <EditText
+                android:id="@+id/et_room"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="16dp"
+                android:layout_toRightOf="@id/tv_unit"
+                android:background="@color/transparent"
+                android:hint="号"
+                android:maxLength="5"
+                android:singleLine="true"
+                android:textColor="@color/color_text_gray"
+                android:textColorHint="@color/color_text_gray" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/et_room"
+                android:gravity="center"
+                android:text="号" />
+
+        </RelativeLayout>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/bt_save"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
+        android:background="@color/myred"
+        android:textColor="@color/white"
+        android:text="在 线 反 馈"/>
+</LinearLayout>

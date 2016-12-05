@@ -1,0 +1,639 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.xuhai.wngs" >
+
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.INTERACT_ACROSS_USERS_FULL" />
+    <uses-permission android:name="android.permission.PERMISSION_NAME" />
+    <!-- Push service 运行需要的权限 -->
+    <!-- 访问网络，网络定位需要上网 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- 用于读取手机当前的状态 -->
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <!-- 获取运营商信息，用于支持提供运营商信息相关的接口 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <!-- 写入扩展存储，向扩展卡写入数据，用于写入离线定位数据 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_DOWNLOAD_MANAGER" />
+    <uses-permission android:name="android.permission.DOWNLOAD_WITHOUT_NOTIFICATION" />
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
+    <!-- 这个权限用于进行网络定位 -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <!-- 这个权限用于访问GPS定位 -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <!-- 用于访问wifi网络信息，wifi信息会用于进行网络定位 -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <!-- 这个权限用于获取wifi的获取权限，wifi信息会用来进行网络定位 -->
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <!-- SD卡读取权限，用户写入离线定位数据 -->
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <!-- 允许应用读取低级别的系统日志文件 -->
+    <uses-permission android:name="android.permission.READ_LOGS" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.MANAGE_ACCOUNTS" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <application
+        android:name=".WngsApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name=".GuideActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/NoActionBarTheme" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".WelcomeActivity"
+            android:label="@string/title_activity_welcome"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Light.NoTitleBar" />
+        <activity
+            android:name=".ShequListActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/CustomActivityTheme" />
+        <activity
+            android:name="cn.sharesdk.framework.ShareSDKUIShell"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:windowSoftInputMode="stateHidden|adjustResize" >
+            <intent-filter>
+                <data android:scheme="tencent100371282" />
+
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.BROWSABLE" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <!-- 微信分享回调 -->
+        <activity
+            android:name=".wxapi.WXEntryActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <activity
+            android:name=".BaseActivity"
+            android:label="@string/title_activity_base"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.wyfw.WyfwTSBXActivity"
+            android:label="@string/title_activity_wyfw_tsbx"
+            android:screenOrientation="portrait"
+            android:theme="@style/CustomActivityTheme" />
+        <activity
+            android:name=".ShequActivity"
+            android:label="@string/title_activity_shequ"
+            android:screenOrientation="portrait"
+            android:theme="@style/CustomActivityTheme" />
+        <activity
+            android:name=".ui.wyfw.WyfwBMFWActivity"
+            android:label="@string/title_activity_wyfw_bmfw"
+            android:screenOrientation="portrait"
+            android:theme="@style/CustomActivityTheme" />
+        <activity
+            android:name=".ui.wyfw.WyfwZXGGActivity"
+            android:label="@string/title_activity_wyfw_zxgg"
+            android:screenOrientation="portrait"
+            android:theme="@style/CustomActivityTheme" />
+        <activity
+            android:name=".BaseActionBarAsUpActivity"
+            android:label="@string/title_activity_base_action_bar_as_up"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.shzl.ShzlBLDActivity"
+            android:label="@string/title_activity_shzl_bld"
+            android:screenOrientation="portrait"
+            android:theme="@style/CustomActivityTheme" >
+            <meta-data
+                android:name="android.app.searchable"
+                android:resource="@xml/searchable" />
+        </activity>
+        <activity
+            android:name=".ui.shzl.ShzlBMXXActivity"
+            android:label="@string/title_activity_shzl_bmdh"
+            android:screenOrientation="portrait"
+            android:theme="@style/CustomActivityTheme" />
+        <activity
+            android:name=".ui.shzl.ShzlYHXXActivity"
+            android:label="@string/title_activity_shzl_yhxx"
+            android:screenOrientation="portrait"
+            android:theme="@style/CustomActivityTheme" />
+        <activity
+            android:name=".ui.shzl.ShzlBBSActivity"
+            android:label="@string/title_activity_shzl_bbs"
+            android:screenOrientation="portrait"
+            android:theme="@style/CustomActivityTheme" />
+        <activity
+            android:name=".ui.sjfw.SjfwCGActivity"
+            android:label="@string/title_activity_sjfw_cg"
+            android:screenOrientation="portrait"
+            android:theme="@style/CustomActivityTheme" />
+        <activity
+            android:name=".ui.sjfw.SjfwYLActivity"
+            android:label="@string/title_activity_sjfw_yl"
+            android:screenOrientation="portrait"
+            android:theme="@style/CustomActivityTheme" />
+        <activity
+            android:name=".ui.sjfw.SjfwHSActivity"
+            android:label="@string/title_activity_sjfw_hs"
+            android:screenOrientation="portrait"
+            android:theme="@style/CustomActivityTheme" />
+        <activity
+            android:name=".ui.sjfw.SjfwXYActivity"
+            android:label="@string/title_activity_sjfw_xy"
+            android:screenOrientation="portrait"
+            android:theme="@style/CustomActivityTheme" />
+        <activity
+            android:name=".ui.sjfw.SjfwJZActivity"
+            android:label="@string/title_activity_sjfw_jz"
+            android:screenOrientation="portrait"
+            android:theme="@style/CustomActivityTheme" />
+        <activity
+            android:name=".ui.sjfw.SjfwJYPXActivity"
+            android:label="@string/title_activity_sjfw_jypx"
+            android:screenOrientation="portrait"
+            android:theme="@style/CustomActivityTheme" />
+        <activity
+            android:name=".ui.sjfw.SjfwYDActivity"
+            android:label="@string/title_activity_sjfw_yd"
+            android:screenOrientation="portrait"
+            android:theme="@style/CustomActivityTheme" />
+        <activity
+            android:name=".ui.sjfw.SjfwYILIAOActivity"
+            android:label="@string/title_activity_sjfw_yiliao"
+            android:screenOrientation="portrait"
+            android:theme="@style/CustomActivityTheme" />
+        <activity
+            android:name=".ui.sjfw.SjfwQCBYActivity"
+            android:label="@string/title_activity_sjfw_qcby"
+            android:screenOrientation="portrait"
+            android:theme="@style/CustomActivityTheme" />
+        <activity android:name="com.alipay.android.app.sdk.WapPayActivity" />
+
+        <!-- Ping++ SDK 注册 -->
+        <activity
+            android:name="com.pingplusplus.android.PaymentActivity"
+            android:configChanges="orientation|screenSize"
+            android:launchMode="singleTop"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <!-- 微信支付注册 -->
+        <activity-alias
+            android:name=".wxapi.WXPayEntryActivity"
+            android:exported="true"
+            android:targetActivity="com.pingplusplus.android.PaymentActivity" />
+        <!-- 支付宝注册 -->
+        <activity
+            android:name="com.alipay.sdk.app.H5PayActivity"
+            android:configChanges="orientation|keyboardHidden|navigation"
+            android:exported="false"
+            android:screenOrientation="behind" />
+        <activity
+            android:name="com.alipay.sdk.auth.AuthActivity"
+            android:configChanges="orientation|keyboardHidden|navigation"
+            android:exported="false"
+            android:screenOrientation="behind" />
+
+        <!-- push应用定义消息receiver声明 -->
+        <receiver android:name=".push.MyPushMessageReceiver" >
+            <intent-filter>
+
+                <!-- 接收push消息 -->
+                <action android:name="com.baidu.android.pushservice.action.MESSAGE" />
+                <!-- 接收bind,unbind,fetch,delete等反馈消息 -->
+                <action android:name="com.baidu.android.pushservice.action.RECEIVE" />
+                <action android:name="com.baidu.android.pushservice.action.notification.CLICK" />
+            </intent-filter>
+        </receiver>
+
+        <!-- push必须的receviver和service声明 -->
+        <receiver
+            android:name="com.baidu.android.pushservice.PushServiceReceiver"
+            android:process=":bdservice_v1" >
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+                <action android:name="com.baidu.android.pushservice.action.notification.SHOW" />
+                <action android:name="com.baidu.android.pushservice.action.media.CLICK" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name="com.baidu.android.pushservice.RegistrationReceiver"
+            android:process=":bdservice_v1" >
+            <intent-filter>
+                <action android:name="com.baidu.android.pushservice.action.METHOD" />
+                <action android:name="com.baidu.android.pushservice.action.BIND_SYNC" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_REMOVED" />
+
+                <data android:scheme="package" />
+            </intent-filter>
+        </receiver>
+
+        <service
+            android:name="com.baidu.android.pushservice.PushService"
+            android:exported="true"
+            android:process=":bdservice_v1" >
+            <intent-filter>
+                <action android:name="com.baidu.android.pushservice.action.PUSH_SERVICE" />
+            </intent-filter>
+        </service>
+        <!-- push结束 -->
+        <service
+            android:name="com.brtbeacon.sdk.service.BRTBeaconService"
+            android:exported="false" />
+
+        <!-- 定位service -->
+        <service
+            android:name="com.baidu.location.f"
+            android:enabled="true"
+            android:process=":remote" />
+
+        <activity
+            android:name=".ui.wyfw.WyfwGJXXActivity"
+            android:label="@string/title_activity_wyfw_gjxx"
+            android:theme="@style/CustomActivityTheme" />
+        <activity
+            android:name=".WebActivity"
+            android:label="@string/title_activity_web"
+            android:theme="@style/CustomActivityTheme" />
+        <activity
+            android:name=".ui.more.LoginActivity"
+            android:label="@string/title_activity_login"
+            android:theme="@style/CustomActivityTheme"
+            android:windowSoftInputMode="stateVisible|adjustResize" />
+        <activity
+            android:name=".ui.sjfw.SjfwPublicListActivity"
+            android:label="@string/title_activity_sjfw_public_list"
+            android:screenOrientation="portrait"
+            android:theme="@style/CustomActivityTheme" />
+        <activity
+            android:name=".ui.wyfw.WyfwHDActivity"
+            android:label="@string/title_activity_wyfw_hd"
+            android:screenOrientation="portrait"
+            android:theme="@style/CustomActivityTheme" />
+        <activity
+            android:name=".ui.wyfw.WyfwZFCXActivity"
+            android:label="@string/title_activity_wyfw_zfcx"
+            android:screenOrientation="portrait"
+            android:theme="@style/CustomActivityTheme" />
+        <activity
+            android:name=".ui.wyfw.WyfwDZactivity"
+            android:label="@string/title_activity_wyfw_dzactivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/CustomActivityTheme" />
+        <activity
+            android:name=".ui.shzl.ShzlBBSContentActivity"
+            android:label="@string/title_activity_shzl_bbscontent"
+            android:theme="@style/CustomActivityTheme" />
+        <activity
+            android:name=".ui.wyfw.WyfwDZXQActivity"
+            android:label="@string/title_activity_wyfw_dzxq"
+            android:screenOrientation="portrait"
+            android:theme="@style/CustomActivityTheme" />
+        <activity
+            android:name=".ui.more.MoreSHDZActivity"
+            android:label="@string/title_activity_more_shdz"
+            android:screenOrientation="portrait"
+            android:theme="@style/CustomActivityTheme" />
+        <activity
+            android:name=".ui.more.MoreJFDDActivity"
+            android:label="@string/title_activity_more_jfdd"
+            android:screenOrientation="portrait"
+            android:theme="@style/CustomActivityTheme" />
+        <activity
+            android:name=".ui.more.MyinfoActivity"
+            android:label="@string/title_activity_myinfo"
+            android:screenOrientation="portrait"
+            android:theme="@style/CustomActivityTheme" />
+        <activity
+            android:name=".ui.more.ModifyNameActivity"
+            android:label="@string/title_activity_modify_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/CustomActivityTheme"
+            android:windowSoftInputMode="stateVisible|adjustResize" />
+        <activity
+            android:name=".ui.more.ModifyMessageActivity"
+            android:label="@string/title_activity_modify_message"
+            android:screenOrientation="portrait"
+            android:theme="@style/CustomActivityTheme"
+            android:windowSoftInputMode="stateVisible|adjustResize" />
+        <activity
+            android:name=".ui.more.MoreJfddItemActivity"
+            android:label="@string/title_activity_more_jfdd_item"
+            android:screenOrientation="portrait"
+            android:theme="@style/CustomActivityTheme" />
+        <activity
+            android:name=".ui.more.RegisterActivity"
+            android:label="@string/title_activity_register"
+            android:screenOrientation="portrait"
+            android:theme="@style/CustomActivityTheme"
+            android:windowSoftInputMode="stateVisible|adjustResize" />
+        <activity
+            android:name=".ui.more.RegisterYanzhengActivity"
+            android:label="@string/title_activity_register_yanzheng"
+            android:screenOrientation="portrait"
+            android:theme="@style/CustomActivityTheme"
+            android:windowSoftInputMode="stateVisible|adjustResize" />
+        <activity
+            android:name=".ui.imgchoose.ImageChooseActivity"
+            android:label="@string/title_activity_image_choose"
+            android:screenOrientation="portrait"
+            android:theme="@style/CustomActivityTheme" />
+        <activity
+            android:name=".ui.more.PWNewActivity"
+            android:label="@string/title_activity_pwnew"
+            android:screenOrientation="portrait"
+            android:theme="@style/CustomActivityTheme"
+            android:windowSoftInputMode="stateVisible|adjustResize" />
+        <activity
+            android:name=".ui.wyfw.WyfwTsbxPostActivity"
+            android:label="@string/title_activity_wyfw_tsbx_post"
+            android:screenOrientation="portrait"
+            android:theme="@style/CustomActivityTheme"
+            android:windowSoftInputMode="stateVisible|adjustResize" />
+        <activity
+            android:name=".ui.shzl.ShzlBBSHFActivity"
+            android:label="@string/title_activity_shzl_bbshf"
+            android:screenOrientation="portrait"
+            android:theme="@style/CustomActivityTheme"
+            android:windowSoftInputMode="stateVisible|adjustResize" />
+        <activity
+            android:name=".ui.more.MoreYZRZActivity"
+            android:label="@string/title_activity_more_yzrz"
+            android:screenOrientation="portrait"
+            android:theme="@style/CustomActivityTheme"
+            android:windowSoftInputMode="stateVisible|adjustResize" />
+        <activity
+            android:name=".ui.more.MoreWDJFActivity"
+            android:label="@string/title_activity_more_wdjf"
+            android:screenOrientation="portrait"
+            android:theme="@style/CustomActivityTheme" />
+        <activity
+            android:name=".ui.more.MoreWDDDActivity"
+            android:label="@string/title_activity_more_wddd"
+            android:screenOrientation="portrait"
+            android:theme="@style/CustomActivityTheme" />
+        <activity
+            android:name=".ui.shzl.ShzlBldCPLBActivity"
+            android:label="@string/title_activity_shzl_bld_cplb"
+            android:screenOrientation="portrait"
+            android:theme="@style/CustomActivityTheme"
+            android:windowSoftInputMode="adjustPan" >
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.more.MoreJFDHActivity"
+            android:label="@string/title_activity_more_jfdh"
+            android:screenOrientation="portrait"
+            android:theme="@style/CustomActivityTheme" />
+        <activity
+            android:name=".ui.more.MoreJfdhItemActivity"
+            android:label="@string/title_activity_more_jfdh_item"
+            android:screenOrientation="portrait"
+            android:theme="@style/CustomActivityTheme" />
+        <activity
+            android:name=".ui.shzl.ShzlBldSPXQActivity"
+            android:label="@string/title_activity_shzl_bld_spxq"
+            android:screenOrientation="portrait"
+            android:theme="@style/CustomActivityTheme" />
+        <activity
+            android:name=".ui.shzl.ShzlBldCARActivity"
+            android:label="@string/title_activity_shzl_bld_car"
+            android:screenOrientation="portrait"
+            android:theme="@style/CustomActivityTheme" />
+        <activity
+            android:name=".ui.shzl.ShzlBldQRDDActivity"
+            android:label="@string/title_activity_shzl_bld_qrdd"
+            android:screenOrientation="portrait"
+            android:theme="@style/CustomActivityTheme" />
+        <activity
+            android:name=".ui.more.MoreWdddItemActivity"
+            android:label="@string/title_activity_more_wddd_item"
+            android:screenOrientation="portrait"
+            android:theme="@style/CustomActivityTheme" />
+        <activity
+            android:name=".ui.more.MoreWdddPj"
+            android:label="@string/title_activity_more_wddd_pj"
+            android:screenOrientation="portrait"
+            android:theme="@style/CustomActivityTheme"
+            android:windowSoftInputMode="stateVisible|adjustResize" />
+        <activity
+            android:name=".ui.more.MoreXGSHDZ"
+            android:label="@string/title_activity_more_xgshdz"
+            android:screenOrientation="portrait"
+            android:theme="@style/CustomActivityTheme" />
+        <activity
+            android:name=".ui.more.MoreTJSHDZActivity"
+            android:label="@string/title_activity_more_tjshdz"
+            android:screenOrientation="portrait"
+            android:theme="@style/CustomActivityTheme"
+            android:windowSoftInputMode="stateVisible|adjustResize" />
+        <activity
+            android:name=".GuideVPActivity"
+            android:label="@string/title_activity_guide_vp"
+            android:screenOrientation="portrait"
+            android:theme="@style/NoActionBarTheme" />
+        <activity
+            android:name=".ui.shzl.ShzlBldQRDDBzActivity"
+            android:label="@string/title_activity_shzl_bld_qrddbz"
+            android:screenOrientation="portrait"
+            android:theme="@style/CustomActivityTheme"
+            android:windowSoftInputMode="stateVisible|adjustResize" />
+        <activity
+            android:name=".ui.more.MoreWDKDActivity"
+            android:label="@string/title_activity_more_wdkd"
+            android:screenOrientation="portrait"
+            android:theme="@style/CustomActivityTheme" >
+        </activity>
+        <activity
+            android:name=".ui.more.MoreWdkdItemActivity"
+            android:label="@string/title_activity_more_wdkd_item"
+            android:screenOrientation="portrait"
+            android:theme="@style/CustomActivityTheme" >
+        </activity>
+        <activity
+            android:name=".ui.shzl.ShzlPublicTPFDActivity"
+            android:label="@string/title_activity_shzl_public_tpfd"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Light.NoTitleBar" >
+        </activity>
+        <activity
+            android:name=".ui.shzl.ShzlBbsPostActivity"
+            android:label="@string/title_activity_shzl_bbs_post"
+            android:screenOrientation="portrait"
+            android:theme="@style/CustomActivityTheme"
+            android:windowSoftInputMode="stateVisible|adjustResize" >
+        </activity>
+        <activity
+            android:name=".ui.wyfw.WyfwDzPostActivity"
+            android:label="@string/title_activity_wyfw_dz_post"
+            android:screenOrientation="portrait"
+            android:theme="@style/CustomActivityTheme"
+            android:windowSoftInputMode="stateVisible|adjustResize" >
+        </activity>
+        <activity
+            android:name=".ui.imgchoose.PhotoPreviewActivity"
+            android:label="@string/title_activity_photo_preview"
+            android:screenOrientation="portrait"
+            android:theme="@style/CustomActivityTheme" >
+        </activity>
+        <activity
+            android:name=".ui.more.MoreInfoCropHeadActivity"
+            android:label="@string/title_activity_more_info_crop_head"
+            android:screenOrientation="portrait"
+            android:theme="@style/CustomActivityTheme" >
+        </activity>
+        <activity
+            android:name=".ui.more.MoreGYWMActivity"
+            android:label="@string/title_activity_more_gywm"
+            android:screenOrientation="portrait"
+            android:theme="@style/CustomActivityTheme" >
+        </activity>
+
+        <!-- 在百度开发者中心查询应用的API Key -->
+        <meta-data
+            android:name="api_key"
+            android:value="RicnrctWEs3SCzPkMQ0FeE8L" />
+        <meta-data
+            android:name="com.baidu.lbsapi.API_KEY"
+            android:value="3Qi6MqY6vM7EOgH3crwYb539" />
+        <meta-data
+            android:name="UMENG_APPKEY"
+            android:value="5440c75bfd98c5a75f002a20" />
+        <meta-data
+            android:name="UMENG_CHANNEL"
+            android:value="Google Play" />
+
+        <activity
+            android:name=".ui.more.MoreRZFKAcitivity"
+            android:label="@string/title_activity_more_rzfkacitivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/CustomActivityTheme" >
+        </activity>
+        <activity
+            android:name=".ui.shzl.ShzlBbsMsgActivity"
+            android:label="@string/title_activity_shzl_bbs_msg"
+            android:screenOrientation="portrait"
+            android:theme="@style/CustomActivityTheme" >
+        </activity>
+        <activity
+            android:name=".ui.more.MoreCardListActivity"
+            android:label="@string/title_activity_more_card_list"
+            android:screenOrientation="portrait"
+            android:theme="@style/CustomActivityTheme" >
+        </activity>
+        <activity
+            android:name=".ui.more.MoreYueActivity"
+            android:label="@string/title_activity_more_yue"
+            android:screenOrientation="portrait"
+            android:theme="@style/CustomActivityTheme" >
+        </activity>
+        <activity
+            android:name=".ui.more.MoreZdmxActivity"
+            android:label="@string/title_activity_more_zdmx"
+            android:screenOrientation="portrait"
+            android:theme="@style/CustomActivityTheme" >
+        </activity>
+        <activity
+            android:name=".ui.more.MoreCardCzActivity"
+            android:label="@string/title_activity_more_card_cz"
+            android:screenOrientation="portrait"
+            android:theme="@style/CustomActivityTheme" >
+        </activity>
+        <activity
+            android:name=".ui.more.MoreCardTxActivity"
+            android:label="@string/title_activity_more_card_tx"
+            android:screenOrientation="portrait"
+            android:theme="@style/CustomActivityTheme" >
+        </activity>
+        <activity
+            android:name=".ui.more.MoreCardBd1Activity"
+            android:label="@string/title_activity_more_card_bd2"
+            android:theme="@style/CustomActivityTheme" >
+        </activity>
+        <activity
+            android:name=".ui.more.MoreCardBd2Activity"
+            android:label="@string/title_activity_more_card_bd2"
+            android:theme="@style/CustomActivityTheme" >
+        </activity>
+        <activity
+            android:name=".ui.more.MoreCardBd3Activity"
+            android:label="@string/title_activity_more_card_bd3"
+            android:theme="@style/CustomActivityTheme" >
+        </activity>
+        <activity
+            android:name=".ui.more.MorePayPwd1Activity"
+            android:label="@string/title_activity_more_pay_pwd1"
+            android:screenOrientation="portrait"
+            android:theme="@style/CustomActivityTheme" >
+        </activity>
+        <activity
+            android:name=".ui.more.MorePayPwd2Activity"
+            android:label="@string/title_activity_more_pay_pwd2"
+            android:screenOrientation="portrait"
+            android:theme="@style/CustomActivityTheme" >
+        </activity>
+        <activity
+            android:name=".ui.more.MorePayPwd11Activity"
+            android:label="@string/title_activity_more_pay_pwd11"
+            android:screenOrientation="portrait"
+            android:theme="@style/CustomActivityTheme" >
+        </activity>
+        <activity
+            android:name=".ui.more.MorePayPwdUpActivity"
+            android:label="@string/title_activity_more_pay_pwd_up"
+            android:theme="@style/CustomActivityTheme" >
+        </activity>
+        <activity
+            android:name=".ui.sjfw.SjfwStoreActivity"
+            android:label="@string/title_activity_sjfw_store"
+            android:theme="@style/CustomActivityTheme" >
+        </activity>
+        <activity
+            android:name=".ui.main.MainCitySelActivity"
+            android:label="@string/title_activity_main_city_sel"
+            android:theme="@style/CustomActivityTheme" >
+        </activity>
+        <activity
+            android:name=".ui.more.MorePayAgainActivity"
+            android:label="@string/title_activity_more_pay_again"
+            android:screenOrientation="portrait"
+            >
+        </activity>
+        <activity
+            android:name=".ui.shzl.ShzlOpenDActitity"
+            android:label="开门"
+            android:screenOrientation="portrait"
+            android:theme="@style/CustomActivityTheme"
+            >
+        </activity>
+    </application>
+
+</manifest>

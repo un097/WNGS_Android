@@ -1,0 +1,11 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.xuhai.wngs.ui.more.ModifyNameActivity">
+    <item
+        android:id="@+id/yes"
+        android:title="确定"
+        android:icon="@drawable/ic_myinfo_duihao"
+        android:showAsAction="always"
+        ></item>
+</menu>

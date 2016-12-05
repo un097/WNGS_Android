@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingLeft="@dimen/padding_list_left_right"
+    android:paddingRight="@dimen/padding_list_left_right"
+    android:paddingTop="@dimen/padding_list_top">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        card_view:cardBackgroundColor="@color/white"
+        card_view:cardCornerRadius="0dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/selector_half_transp"
+            android:padding="12dp">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/image"
+                android:layout_width="@dimen/base_dimen_64"
+                android:layout_height="@dimen/base_dimen_64"
+                android:layout_centerVertical="true"
+                android:src="@drawable/ic_huisewoniu"
+                app:border_color="@color/light"
+                app:border_width="2dp" />
+
+            <RelativeLayout
+                android:id="@+id/rl1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_marginLeft="16dp"
+
+                android:layout_toEndOf="@id/image"
+                android:layout_toRightOf="@id/image">
+
+                <TextView
+                    android:id="@+id/cplp_title"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+
+                    android:maxLines="2"
+                    android:text="滴答滴的的的哈哈"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/cplp_sales"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/cplp_title"
+                    android:layout_marginTop="4dp"
+                    android:maxLines="2"
+                    android:text=""
+                    android:textColor="@color/color_text_gray"
+                    android:textSize="14sp"
+
+                    />
+
+                <TextView
+                    android:id="@+id/cplb_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/rl2"
+                    android:layout_marginTop="4dp"
+                    android:text="444"
+                    android:textColor="@color/red"
+                    android:textSize="16sp" />
+                <ImageView
+                    android:visibility="gone"
+                    android:id="@+id/cplb_tejia"
+                    android:layout_toRightOf="@+id/cplb_price"
+                    android:layout_below="@+id/rl2"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="10dp"
+                    android:src="@drawable/image_xianshitejia"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <RelativeLayout
+                    android:id="@+id/rl2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/cplp_title"
+                    android:layout_marginTop="5dp"
+                    android:layout_alignParentRight="true">
+
+                    <ImageView
+                        android:id="@+id/cplb_jian"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="8dp"
+                        android:background="@drawable/btn_bld_sub" />
+
+                    <EditText
+                        android:id="@+id/cplb_number"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="8dp"
+                        android:maxLength="3"
+                        android:layout_toRightOf="@id/cplb_jian"
+                        android:background="@drawable/bg_bld_num"
+                        android:gravity="center"
+                        android:focusable="true"
+                        android:inputType="number"
+
+                        android:text="0" />
+
+                    <ImageView
+                        android:id="@+id/cplb_add"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@id/cplb_number"
+                        android:background="@drawable/btn_bld_add" />
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+
+</RelativeLayout>

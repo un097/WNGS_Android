@@ -1,0 +1,115 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 21
+    buildToolsVersion '23.0.2'
+
+    defaultConfig {
+        applicationId "com.xuhai.wngs"
+        minSdkVersion 14
+        targetSdkVersion 20
+        versionCode 8
+        versionName "3.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            jniDebuggable true
+        }
+    }
+
+    productFlavors {
+    }
+    lintOptions {
+        checkReleaseBuilds false
+        // Or, if you prefer, you can continue to check for errors in release builds,
+        // but continue the build even when errors are found:
+        abortOnError false
+    }
+
+    buildscript {
+        repositories {
+            mavenCentral()
+        }
+    }
+
+    repositories {
+        mavenCentral()
+        flatDir {
+            dirs 'libs'
+        }
+    }
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+
+    packagingOptions {
+        exclude 'META-INF/INDEX.LIST'
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE.txt'
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile 'com.android.support:support-v13:21.0.0'
+    compile project(':ViewPagerIndicator')
+    compile project(':alipay_lib')
+    compile project(':circleimageview')
+    compile project(':pulltorefresh')
+    compile project(':pulltorefresh_listfragment')
+    compile project(':pullrefreshlayout')
+    compile project(':photoviewlibrary')
+    compile project(':twowayviewcore')
+    compile files('libs/mframework.jar')
+    compile files('libs/ShareSDK-Core-2.4.1.jar')
+    compile files('libs/ShareSDK-Email-2.4.1.jar')
+    compile files('libs/ShareSDK-QQ-2.4.1.jar')
+    compile files('libs/ShareSDK-QZone-2.4.1.jar')
+    compile files('libs/ShareSDK-ShortMessage-2.4.1.jar')
+    compile files('libs/ShareSDK-SinaWeibo-2.4.1.jar')
+    compile files('libs/ShareSDK-TencentWeibo-2.4.1.jar')
+    compile files('libs/ShareSDK-Wechat-2.4.1.jar')
+    compile files('libs/ShareSDK-Wechat-Core-2.4.1.jar')
+    compile files('libs/ShareSDK-Wechat-Favorite-2.4.1.jar')
+    compile files('libs/ShareSDK-Wechat-Moments-2.4.1.jar')
+    compile files('libs/httpclient-4.3.6.jar')
+    compile files('libs/httpclient-cache-4.3.6.jar')
+    compile files('libs/httpcore-4.3.3.jar')
+    compile files('libs/httpmime-4.3.6.jar')
+    compile files('libs/universal-image-loader-1.9.2.jar')
+    compile 'com.squareup.picasso:picasso:2.4.0'
+    compile 'com.google.code.gson:gson:2.3'
+    compile 'com.android.support:cardview-v7:21.0.2'
+    compile 'com.android.support:recyclerview-v7:21.0.2'
+    compile 'com.nhaarman.listviewanimations:lib-core:3.1.0'
+    compile 'com.melnykov:floatingactionbutton:1.1.0'
+    compile 'com.github.castorflex.smoothprogressbar:library:1.0.0'
+    compile 'com.github.castorflex.smoothprogressbar:library-circular:1.0.1'
+    compile 'com.google.zxing:core:3.1.0'
+    compile 'com.google.zxing:android-integration:3.1.0'
+    compile 'com.umeng.analytics:analytics:5.2.4'
+    compile 'com.edmodo:cropper:1.0.1'
+    compile 'com.squareup.okhttp:okhttp-urlconnection:2.1.0'
+    compile 'com.github.johnkil.android-progressfragment:progressfragment:1.4.0'
+    compile 'com.github.dmytrodanylyk.circular-progress-button:library:1.1.3'
+    compile files('libs/pushservice-4.4.0.71.jar')
+    compile 'com.cocosw:bottomsheet:1.2.0'
+    compile files('libs/alipaysdk.jar')
+    compile files('libs/alipaysecsdk.jar')
+    compile files('libs/alipayutdid.jar')
+    compile 'me.drakeet.materialdialog:library:1.2.3'
+    compile files('libs/BrightBeaconSDK-3.2.4.jar')
+    compile(name: 'cccbpay', ext: 'aar')
+    compile files('libs/locSDK_6.13.jar')
+}
+

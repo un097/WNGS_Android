@@ -1,0 +1,103 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/layout_bg"
+    tools:context="com.xuhai.wngs.ui.more.RegisterYanzhengActivity">
+
+    <EditText
+        android:id="@+id/et_username"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/base_dimen_48"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/bg_edit"
+        android:hint="请输入您的手机号"
+        android:inputType="number"
+        android:maxLength="11"
+        android:paddingLeft="16dp"
+        android:textColorHint="@color/color_text_gray" />
+
+    <RelativeLayout
+        android:id="@+id/rl1"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/base_dimen_48"
+        android:layout_below="@id/et_username"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/bg_edit"
+        android:paddingLeft="16dp">
+
+        <EditText
+            android:id="@+id/et_yanzhengma"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:background="@android:color/transparent"
+            android:hint="输入您获取到的验证码"
+            android:inputType="number"
+            android:textColorHint="@color/color_text_gray" />
+
+        <ImageView
+            android:id="@+id/getyanzheng"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+
+            android:layout_marginRight="16dp"
+            android:src="@drawable/image_more_yanzhengma" />
+
+        <TextView
+            android:id="@+id/time"
+            android:layout_width="100dp"
+            android:layout_height="27dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="16dp"
+            android:background="#ffff9115"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_yhxx"
+        android:layout_below="@id/rl1"
+        android:orientation="horizontal"
+        android:paddingLeft="12dp"
+        android:paddingRight="12dp"
+        android:layout_marginTop="8dp"
+        android:gravity="center_vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <CheckBox
+            android:id="@+id/check_yhxx"
+            android:checked="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="同意"
+            android:textSize="14dp"
+            />
+        <TextView
+            android:id="@+id/tv_yhxx"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="《用户协议》"
+            android:textSize="14dp"
+            android:textColor="@android:color/holo_blue_dark"
+            />
+    </LinearLayout>
+
+
+    <ImageView
+        android:id="@+id/confirmation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/layout_yhxx"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="12dp"
+
+        android:background="@drawable/btn_more_confirmation"
+        android:textColor="@color/white" />
+
+</RelativeLayout>
